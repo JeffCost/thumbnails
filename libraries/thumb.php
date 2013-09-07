@@ -193,7 +193,7 @@ class Thumb
 
                 if($imageTime > $cacheTime)
                 {
-                    Log::debug('Thumgurl: Recaching old thumbnail. ['.$storage_path.DS.$imageName.']');
+                    Log::debug('Thumburl: Recaching old thumbnail. ['.$storage_path.DS.$imageName.']');
                     return $resource ? $this->cacheImage($imageName, $path, $size, $storage_path, $mode) : $this->image_path.'/'.$w.'x'.$h.'/'.$imageName;
                 }
                 else
@@ -203,14 +203,14 @@ class Thumb
             }
             else
             {
-                Log::debug('Thumgurl: Generating new thumbnail. ['.$storage_path.DS.$imageName.']');
+                Log::debug('Thumburl: Generating new thumbnail. ['.$storage_path.DS.$imageName.']');
                 $image = $this->cacheImage($imageName, $path, $size, $storage_path, $mode);
                 return $resource ? $image : $this->image_path.'/'.$w.'x'.$h.'/'.$imageName;
             }
         }
         else
         {
-            Log::debug('Thumgurl: The image name ['.$imageName.'] is invalid.');
+            Log::debug('Thumburl: The image name ['.$imageName.'] is invalid.');
             $image = $this->cacheImage('not-found.jpg', $this->config->get('thumbnails::options.error_image'), $size, $storage_path, $mode);
             return $resource ? $image : $this->image_path.'/'.$w.'x'.$h.'/'.'not-found.jpg';
         }
