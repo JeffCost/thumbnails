@@ -18,5 +18,5 @@ return array(
     |--------------------------------------------------------------------------
     |
     */
-    'image_path' => 'thumbnails/cached',
+    'image_path' => 'media/thumbnails/cached',
 );
